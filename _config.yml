@@ -1,11 +1,15 @@
+# @Author: Your name
+# @Date:   2020-01-07 01:05:02
+# @Last Modified by:   Your name
+# @Last Modified time: 2020-01-07 01:10:14
 # menu
 menu:
   Home: .
   Archives: archives  # 归档
   Categories: categories  # 分类
   Tags: tags  # 标签
-  Repository: repository  # github repositories
-  Books: books  # 豆瓣书单
+  # Repository: repository  # github repositories
+  # Books: books  # 豆瓣书单
   Links: links  # 友链
   About: about  # 关于
 
@@ -16,8 +20,8 @@ menu_icons:
   archives: icon-archives-fill
   categories: icon-folder
   tags: icon-tags
-  repository: icon-project
-  books: icon-book-fill
+  # repository: icon-project
+  # books: icon-book-fill
   links: icon-friendship
   about: icon-cup-fill
 
@@ -38,10 +42,10 @@ site:
 
 # config
 config:
-  skin: # 主题颜色 theme-black theme-blue theme-green theme-purple
+  skin: theme-black # 主题颜色 theme-black theme-blue theme-green theme-purple
   layout: main-center # 布局方式 main-left main-center main-right
   toc: true # 是否开启文章章节目录导航
-  menu_highlight: false # 是否开启当前菜单高亮显示
+  menu_highlight: true # 是否开启当前菜单高亮显示
   thumbnail: false # enable posts thumbnail, options: true, false
   excerpt_link: Read More
 
@@ -82,16 +86,16 @@ search:
   baidu: false # you need to disable other search engines to use Baidu search
 
 # Donate
-donate:
-  enable: true
-  # 微信打赏
-  wechatpay:
-    qrcode: images/donate/wechatpayimg.png
-    title: 微信支付
-  # 支付宝打赏
-  alipay: 
-    qrcode: images/donate/alipayimg.png 
-    title: 支付宝
+# donate:
+#   enable: true
+#   # 微信打赏
+#   wechatpay:
+#     qrcode: images/donate/wechatpayimg.png
+#     title: 微信支付
+#   # 支付宝打赏
+#   alipay: 
+#     qrcode: images/donate/alipayimg.png 
+#     title: 支付宝
 
 # Share
 # weibo,qq,qzone,wechat,tencent,douban,diandian,facebook,twitter,google,linkedin
@@ -101,8 +105,8 @@ share:
   mobile_sites: weibo,qq,qzone  # 移动端显示的分享图标
 
 # Github
-github: 
-  username: cofess  # github username
+# github: 
+#   username: batigooal  # github username
 
 # Comment
 # Gitment
@@ -127,15 +131,18 @@ comment:
     ClientID:  #必须. GitHub Application Client ID.
     ClientSecret:  #必须. GitHub Application Client Secret.
   valine: # Valine. https://valine.js.org
-    appid:  # your leancloud application appid
-    appkey:  # your leancloud application appkey
+    appid:  L5KfR2YlNXodSa9wrAdtBdO9-gzGzoHsz # your leancloud application appid
+    appkey:  Ja1IwI86aFcjktd7ApDnR8qC # your leancloud application appkey
     notify: false # mail notifier , https://github.com/xCss/Valine/wiki
     verify: false # Verification code
     placeholder: Just go go # comment box placeholder
     avatar: mm # gravatar style
     meta: nick,mail,link # custom comment header
     pageSize: 10 # pagination size
+    lang: zh-cn, # 多语言支持 zh-cn | en
     visitor: false # Article reading statistic https://valine.js.org/visitor.html
+    highlight: true # 代码高亮
+    recordIP: true # 记录评论者的IP
 
 # douban 豆瓣书单
 # Api：
@@ -148,11 +155,31 @@ comment:
   # https://api.douban.com/v2/movie/coming_soon 即将上映的电影
   # https://api.douban.com/v2/movie/subject/:id 单个电影信息
   # https://api.douban.com/v2/movie/search?q={text} 电影搜索
-douban:
-  user: # 豆瓣用户名
-  start: 0 # 从哪一条记录开始
-  count: 100 # 获取豆瓣书单数据条数
-  
+# douban:
+#   user: # 豆瓣用户名
+#   start: 0 # 从哪一条记录开始
+#   count: 100 # 获取豆瓣书单数据条数
+
+# 示例: 隐藏分类和标签的搜索
+jsonContent:
+  dateFormat: DD/MM/YYYY
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: false
+    author: false
+
 # PV
 pv:
   busuanzi:
@@ -164,16 +191,16 @@ pv:
         
 # wordcount
 postCount:
-  enable: false
+  enable: true
   wordcount: true  # 文章字数统计
   min2read: true  # 阅读时长预计 
 
 # Plugins
-plugins:
-  google_analytics: # enter the tracking ID for your Google Analytics
-  google_site_verification: # enter Google site verification code
-  baidu_analytics: # enter Baidu Analytics hash key
-  tencent_analytics: 
+# plugins:
+#   google_analytics: # enter the tracking ID for your Google Analytics
+#   google_site_verification: # enter Google site verification code
+#   baidu_analytics: # enter Baidu Analytics hash key
+#   tencent_analytics:
   
 # Miscellaneous
 twitter:
@@ -184,53 +211,53 @@ fb_app_id:
 # profile
 profile:
   enabled: true # Whether to show profile bar
-  avatar: images/avatar.jpg
-  gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-  author: 昵称
-  author_title: Web Developer & Designer
-  author_description: 个人简介。
-  location: Shenzhen, China
-  follow: https://github.com/cofess
-  # Social Links
-  social:
-    links:
-      github: https://github.com/cofess
-      weibo: http://weibo.com/cofess
-      twitter: https://twitter.com/iwebued
-      # facebook: /
-      # dribbble: /
-      behance: https://www.behance.net/cofess
-      rss: atom.xml
-    link_tooltip: true # enable the social link tooltip, options: true, false
-  # My Skills 
-  skills:
-    Git: ★★★☆☆
-    Gulp: ★★★☆☆
-    Javascript: ★★★☆☆
-    HTML+CSS: ★★★☆☆
-    Bootstrap: ★★★☆☆
-    ThinkPHP: ★★★☆☆
-    平面设计: ★★★☆☆
-  # My Personal Links
-  links:
-    Github: https://github.com/cofess
-    Blog: http://blog.cofess.com
-    微博: http://weibo.com/cofess
-    花瓣: http://huaban.com/cofess
-    Behance: https://www.behance.net/cofess
-  # My Personal Labels
-  labels:
-    - 前端
-    - 前端开发
-    - 前端重构
-    - Web前端
-    - 网页重构
-  # My Personal Works
-  works:
-    name:
-      link: http://www.example.com
-      date: 2016
-  # My Personal Projects
-  projects:
-    cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
-    cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
+  # avatar: images/avatar.jpg
+  # gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
+  # author: 昵称
+  # author_title: Web Developer & Designer
+  # author_description: 个人简介。
+  # location: Shenzhen, China
+  # follow: https://github.com/cofess
+  # # Social Links
+  # social:
+  #   links:
+  #     github: https://github.com/cofess
+  #     weibo: http://weibo.com/cofess
+  #     twitter: https://twitter.com/iwebued
+  #     # facebook: /
+  #     # dribbble: /
+  #     behance: https://www.behance.net/cofess
+  #     rss: atom.xml
+  #   link_tooltip: true # enable the social link tooltip, options: true, false
+  # # My Skills 
+  # skills:
+  #   Git: ★★★☆☆
+  #   Gulp: ★★★☆☆
+  #   Javascript: ★★★☆☆
+  #   HTML+CSS: ★★★☆☆
+  #   Bootstrap: ★★★☆☆
+  #   ThinkPHP: ★★★☆☆
+  #   平面设计: ★★★☆☆
+  # # My Personal Links
+  # links:
+  #   # Github: https://github.com/cofess
+  #   # Blog: http://blog.cofess.com
+  #   # 微博: http://weibo.com/cofess
+  #   # 花瓣: http://huaban.com/cofess
+  #   # Behance: https://www.behance.net/cofess
+  # # My Personal Labels
+  # labels:
+  #   - 前端
+  #   - 前端开发
+  #   - 前端重构
+  #   - Web前端
+  #   - 网页重构
+  # # My Personal Works
+  # works:
+  #   name:
+  #     link: http://www.example.com
+  #     date: 2016
+  # # My Personal Projects
+  # projects:
+  #   cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
+  #   cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
